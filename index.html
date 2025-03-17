@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTE Technologies - Premium Inverter Sales & Installation</title>
+    <meta name="description" content="Leading provider of high-quality inverters and professional installation services. Get reliable power backup solutions for your home and business.">
+    <meta name="keywords" content="inverters, power backup, solar inverters, inverter installation, power solutions">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Custom CSS Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .zoom-in {
+            animation: zoomIn 1.5s ease-out;
+        }
+
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        /* Smooth transition for mobile menu */
+        #mobile-menu {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform-origin: top;
+        }
+
+        #mobile-menu.hidden {
+            opacity: 0;
+            transform: scaleY(0);
+            pointer-events: none; /* Disable clicks when hidden */
+        }
+
+        #mobile-menu:not(.hidden) {
+            opacity: 1;
+            transform: scaleY(1);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Adjust navigation for small screens */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            #mobile-menu {
+                position: absolute;
+                top: 100%; /* Position below the navbar */
+                left: 0;
+                right: 0;
+                background-color: white;
+                z-index: 1000;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            #mobile-menu a {
+                padding: 0.75rem 1rem; /* Add padding for better touch targets */
+            }
+        }
+    </style>
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Close mobile menu and scroll to section smoothly
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.add('hidden'); // Close the mobile menu
+
+                const targetId = link.getAttribute('href'); // Get the target section ID
+                const targetSection = document.querySelector(targetId); // Find the target section
+
+                if (targetSection) {
+                    e.preventDefault(); // Prevent default anchor behavior
+                    // Smooth scroll to the target section
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start',
+                    });
+                }
+            });
+        });
+
+        // Initialize AOS
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 1000,
+                once: true,
+            });
+        });
+    </script>
+</head>
+<body class="font-sans overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-screen z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 nav-container">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0">
+                    <img src="logo.png" alt="OTE Technologies Logo" class="h-10 md:h-12">
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-gray-800 hover:text-blue-600 focus:outline-none" aria-label="Toggle mobile menu">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                <!-- Desktop menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home" class="text-gray-800 hover:text-blue-600 transition-colors duration-300">Home</a>
+                        <a href="#products" class="text-gray-800 hover:text-blue-600 transition-colors duration-300">Products</a>
+                        <a href="#services" class="text-gray-800 hover:text-blue-600 transition-colors duration-300">Services</a>
+                        <a href="#about" class="text-gray-800 hover:text-blue-600 transition-colors duration-300">About</a>
+                        <a href="#contact" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors duration-300">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile menu items -->
+            <div id="mobile-menu"  class="hidden w-screen md:hidden pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="text-gray-800 hover:text-blue-600 transition-colors duration-300 py-2">Home</a>
+                    <a href="#products" class="text-gray-800 hover:text-blue-600 transition-colors duration-300 py-2">Products</a>
+                    <a href="#services" class="text-gray-800 hover:text-blue-600 transition-colors duration-300 py-2">Services</a>
+                    <a href="#about" class="text-gray-800 hover:text-blue-600 transition-colors duration-300 py-2">About</a>
+                    <a href="#contact" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors duration-300 text-center">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 md:pt-32 pb-16 md:pb-20 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6" data-aos="fade-up">
+                        Power Your Life with Reliable Inverter Solutions
+                    </h1>
+                    <p class="text-base md:text-lg text-gray-600 mb-6 md:mb-8 fade-in">
+                        Experience uninterrupted power with our premium inverters and professional installation services. Your trusted partner in power backup solutions.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
+                        <a href="#products" class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors duration-300 hover-scale text-center">
+                            Explore Products
+                        </a>
+                        <a href="#contact" class="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full hover:bg-blue-600 hover:text-white transition-colors duration-300 hover-scale text-center">
+                            Get a Quote
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-8 md:mt-0">
+                    <img src="./images/istockphoto-1330011902-612x612.jpg" alt="Modern Inverter System" class="rounded-lg shadow-xl w-full zoom-in">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4" data-aos="fade-up">Why Choose Our Inverters?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto px-4" data-aos="fade-up" data-aos-delay="100">Discover the advantages of choosing our premium inverter solutions for your power backup needs.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+                <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-bolt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">High Efficiency</h3>
+                    <p class="text-gray-600">Our inverters deliver optimal performance with up to 98% efficiency rating.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-shield-alt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Reliable Protection</h3>
+                    <p class="text-gray-600">Advanced safety features protect your devices from voltage fluctuations.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-tools text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Expert Installation</h3>
+                    <p class="text-gray-600">Professional installation and maintenance services by certified technicians.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <img src="./images/gettyimages-1424142106-612x612.jpg" alt="About Us" class="rounded-lg shadow-xl w-full zoom-in" data-aos="fade-right">
+                </div>
+                <div class="order-1 md:order-2 text-center md:text-left">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4" data-aos="fade-up">About OTE Technologies</h2>
+                    <p class="text-gray-600 mb-6" data-aos="fade-up" data-aos-delay="100">
+                        At OTE Technologies, we are committed to providing innovative and reliable power solutions for homes and businesses. With years of experience in the industry, we have become a trusted name in inverter technology and installation services.
+                    </p>
+                    <p class="text-gray-600 mb-6" data-aos="fade-up" data-aos-delay="200">
+                        Our mission is to empower our customers with uninterrupted power supply, ensuring their daily lives and operations run smoothly. We combine cutting-edge technology with exceptional customer service to deliver the best solutions tailored to your needs.
+                    </p>
+                    <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors duration-300 hover-scale text-center" data-aos="fade-up" data-aos-delay="300">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4" data-aos="fade-up">Our Premium Inverter Range</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto px-4" data-aos="fade-up" data-aos-delay="100">Browse through our selection of high-quality inverters for every need.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+                <!-- Product Card 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <img src="./images/homeInverter.jpg" alt="Home Inverter" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Home Series Inverter</h3>
+                        <p class="text-gray-600 mb-4">Perfect for residential use with 1-5kVA capacity range.</p>
+                        <a href="#contact" class="text-blue-600 hover:text-blue-700 font-medium">Learn More →</a>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <img src="./images/Commercial-Solar-Panel-1024x576.jpg" alt="Commercial Inverter" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Commercial Series</h3>
+                        <p class="text-gray-600 mb-4">Ideal for businesses with 5-20kVA capacity range.</p>
+                        <a href="#contact" class="text-blue-600 hover:text-blue-700 font-medium">Learn More →</a>
+                    </div>
+                </div>
+                <!-- Product Card 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <img src="./images/Best_hybrid_inverters_v3.png" alt="Solar Hybrid Inverter" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Solar Hybrid Series</h3>
+                        <p class="text-gray-600 mb-4">Solar-compatible inverters for sustainable power backup.</p>
+                        <a href="#contact" class="text-blue-600 hover:text-blue-700 font-medium">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4" data-aos="fade-up">Our Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Comprehensive inverter solutions tailored to your needs.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-8 bg-gray-50 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-start">
+                        <div class="text-blue-600 mr-4">
+                            <i class="fas fa-tools text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3">Professional Installation</h3>
+                            <p class="text-gray-600">Expert installation by certified technicians ensuring optimal performance and safety.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8 bg-gray-50 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-start">
+                        <div class="text-blue-600 mr-4">
+                            <i class="fas fa-wrench text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3">Maintenance & Repair</h3>
+                            <p class="text-gray-600">Regular maintenance and prompt repair services to keep your system running smoothly.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8 bg-gray-50 rounded-xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-start">
+                        <div class="text-blue-600 mr-4">
+                            <i class="fas fa-clipboard-check text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3">System Assessment</h3>
+                            <p class="text-gray-600">Comprehensive evaluation of your power requirements and customized solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8 bg-gray-50 rounded-xl" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-start">
+                        <div class="text-blue-600 mr-4">
+                            <i class="fas fa-headset text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3">24/7 Support</h3>
+                            <p class="text-gray-600">Round-the-clock technical support and emergency assistance when you need it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                <div class="order-2 md:order-1">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6" data-aos="fade-up">Get in Touch</h2>
+                    <p class="text-gray-600 mb-8" data-aos="fade-up" data-aos-delay="100">Ready to experience uninterrupted power? Contact us for a free consultation.</p>
+                    <div class="space-y-4">
+                        <a href="tel:+1234567890" class="flex items-center hover:text-blue-600" data-aos="fade-up" data-aos-delay="200">
+                            <i class="fas fa-phone text-blue-600 mr-4 w-6"></i>
+                            <span>+1 234 567 890</span>
+                        </a>
+                        <a href="mailto:info@otetechnologies.com" class="flex items-center hover:text-blue-600" data-aos="fade-up" data-aos-delay="300">
+                            <i class="fas fa-envelope text-blue-600 mr-4 w-6"></i>
+                            <span>info@otetechnologies.com</span>
+                        </a>
+                        <div class="flex items-center" data-aos="fade-up" data-aos-delay="400">
+                            <i class="fas fa-map-marker-alt text-blue-600 mr-4 w-6"></i>
+                            <span>123 Power Street, Energy City</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2" data-aos="fade-left">
+                    <form class="space-y-4 bg-white p-6 rounded-lg shadow-md">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                            <input type="text" id="name" placeholder="Enter your name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
+                            <input type="email" id="email" placeholder="Enter your email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+                            <textarea id="message" placeholder="How can we help you?" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="col-span-2 sm:col-span-2 md:col-span-1" data-aos="fade-up">
+                    <img src="logo-white.png" alt="OTE Technologies Logo" class="h-10 md:h-12 mb-4">
+                    <p class="text-gray-400">Your trusted partner in power backup solutions.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white block py-1">Home</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white block py-1">Products</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white block py-1">Services</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white block py-1">About</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white block py-1">Contact</a></li>
+                    </ul>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white block py-1">Installation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white block py-1">Maintenance</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white block py-1">Repairs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white block py-1">Consultation</a></li>
+                    </ul>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 OTE Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+</html>
